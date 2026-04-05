@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget App - Phase 2.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="device-container">
+    
+        <!-- home tab-->
+        <section id="home-section" class="app-page" style="display:none;">
+            <header><h1>Home</h1></header>
+            <main><p>Home Dashboard Placeholder</p></main>
+        </section>
+
+        <!-- add tab -->
+        <section id="add-section" class="app-page" style="display:none;">
+            <header><h1>Add Transaction</h1></header>
+            <main><p>Add Form Placeholder</p></main>
+        </section>
+
+        <!-- goals tab -->
+        <section id="goals-section" class="app-page">
+            <header><h1>Goals</h1></header>
+            <main>
+                <div class="goal-nav">
+                    <button onclick="moveGoal(-1)">&lt;</button>
+                    <h2 id="goal-name">Spring Break Fund</h2>
+                    <button onclick="moveGoal(1)">&gt;</button>
+                </div>
+                <div class="goal-card">
+                    <div class="progress-bg">
+                        <div id="progress-fill" class="progress-bar" style="width: 60%;"></div>
+                    </div>
+                    <div class="labels">
+                        <span>$0</span>
+                        <span id="goal-saved">$1,200</span>
+                        <span id="goal-total">$2,000</span>
+                    </div>
+                    <button class="btn" onclick="openPop('add-pop')">+ Add To Goal</button>
+                </div>
+                <button class="btn main-btn" onclick="openPop('new-pop')">+ Create New Goal</button>
+            </main>
+        </section>
+
+        <!-- insights tab -->
+        <section id="insights-section" class="app-page" style="display:none;">
+            <header><h1>Insights</h1></header>
+            <main><p>Charts Placeholder</p></main>
+        </section>
+
+        <nav class="tab-bar">
+            <div class="tab" onclick="showPage('home-section')">HOME</div>
+            <div class="tab" onclick="showPage('add-section')">ADD</div>
+            <div class="tab active" onclick="showPage('goals-section')">GOAL</div>
+            <div class="tab" onclick="showPage('insights-section')">INSIGHTS</div>
+        </nav>
+
+        <div id="add-pop" class="overlay" onclick="closePop(event)">
+            <div class="popup">
+                <h3>Add to Goal</h3>
+                <input type="number" placeholder="Enter Amount ($)">
+                <button onclick="closePop()">Cancel</button>
+                <button onclick="closePop()">Add</button>
+            </div>
+        </div>
+
+        <div id="new-pop" class="overlay" onclick="closePop(event)">
+            <div class="popup">
+                <h3>New Goal</h3>
+                <input type="text" placeholder="Goal Name">
+                <input type="number" placeholder="Target ($)">
+                <button onclick="closePop()">Create</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
