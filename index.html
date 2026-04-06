@@ -111,7 +111,53 @@
         <!-- insights tab -->
         <section id="insights-section" class="app-page" style="display:none;">
             <header><h1>Insights</h1></header>
-            <main><p>Charts Placeholder</p></main>
+            <main class="insights-main">
+                <h2 class="insights-title">Spending by Category</h2>
+                
+                <div class="insights-container">
+                    <!-- Pie Chart and Legend Side by Side -->
+                    <div class="chart-and-legend">
+                        <svg id="pie-chart" viewBox="0 0 200 200" width="240" height="240">
+                            <!-- Pie chart will be drawn here by JavaScript -->
+                        </svg>
+                        
+                        <div class="category-legend">
+                            <div class="category-item">
+                                <label>
+                                    <input type="checkbox" class="category-checkbox" data-category="rent" checked>
+                                    <span class="color-box" style="background: #5B7FFF;"></span>
+                                    <span class="category-label">Rent 40%</span>
+                                </label>
+                            </div>
+                            <div class="category-item">
+                                <label>
+                                    <input type="checkbox" class="category-checkbox" data-category="food" checked>
+                                    <span class="color-box" style="background: #FF69B4;"></span>
+                                    <span class="category-label">Food 25%</span>
+                                </label>
+                            </div>
+                            <div class="category-item">
+                                <label>
+                                    <input type="checkbox" class="category-checkbox" data-category="shopping" checked>
+                                    <span class="color-box" style="background: #FFA500;"></span>
+                                    <span class="category-label">Shopping 20%</span>
+                                </label>
+                            </div>
+                            <div class="category-item">
+                                <label>
+                                    <input type="checkbox" class="category-checkbox" data-category="transport" checked>
+                                    <span class="color-box" style="background: #20C997;"></span>
+                                    <span class="category-label">Transport 15%</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spending-summary">
+                    <p>You spent 40% of your budget on Rent this month.</p>
+                </div>
+            </main>
         </section>
 
         <nav class="tab-bar">
