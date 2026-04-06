@@ -4,14 +4,65 @@
     <meta charset="UTF-8">
     <title>Budget App - Phase 2.1</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div id="device-container">
-    
-        <!-- home tab-->
+
+        <!-- home tab -->
         <section id="home-section" class="app-page" style="display:none;">
             <header><h1>Home</h1></header>
-            <main><p>Home Dashboard Placeholder</p></main>
+            <main class="home-main">
+                <section class="home-card balance-card">
+                    <p class="home-balance-label">Current Balance</p>
+                    <p class="home-balance-value">$1,572.00</p>
+                </section>
+
+                <h2 class="home-section-title">This Month's Summary</h2>
+
+                <section class="home-card summary-card">
+                    <h3 class="home-month-title">March</h3>
+
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <p class="summary-label">Income</p>
+                            <div class="summary-box">
+                                <p class="summary-value income">$1,800</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-item">
+                            <p class="summary-label">Expenses</p>
+                            <div class="summary-box">
+                                <p class="summary-value expenses">$550</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-item">
+                            <p class="summary-label">Remaining</p>
+                            <div class="summary-box">
+                                <p class="summary-value remaining">$1,250</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="progress-section">
+                    <div class="progress-bar-home">
+                        <div class="progress-expense-home"></div>
+                        <div class="progress-remaining-home"></div>
+                        <div class="progress-rest-home"></div>
+                    </div>
+
+                    <div class="progress-labels-home">
+                        <span>$0</span>
+                        <span>$500</span>
+                        <span>$1,800</span>
+                    </div>
+                </section>
+            </main>
         </section>
 
         <!-- add tab -->
