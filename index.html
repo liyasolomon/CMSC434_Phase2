@@ -75,6 +75,19 @@
         <section id="goals-section" class="app-page">
             <header><h1>Goals</h1></header>
             <main>
+                <div id="new-pop" class="overlay" onclick="closePop(event)">
+                    <div class="box">
+                        <h3>New Goal</h3>
+                        <input type="text" id="new-g-name" placeholder="Goal Name (e.g. New Car)">
+                        <input type="number" id="new-g-target" placeholder="Target Amount ($)">
+                        <input type="number" id="new-g-saved" placeholder="Current Savings ($)">
+                        
+                        <div class="row">
+                            <button class="btn" onclick="closePop()">Cancel</button>
+                            <button class="btn" style="background: var(--green); color: white;" onclick="addNewGoal()">Create</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="goal-nav">
                     <button onclick="moveGoal(-1)">&lt;</button>
                     <h2 id="goal-name">Spring Break Fund</h2>
