@@ -10,73 +10,64 @@
   </head>
   <body>
     <div id="device-container">
-    <!-- overview tab -->
-    <section id="overview-section" class="app-page" style="display:none;">
+      <!-- overview tab -->
+      <section id="overview-section" class="app-page" style="display: none">
         <header>
-            <h1>Overview</h1>
+          <h1>Overview</h1>
         </header>
 
         <main class="overview-main">
-            <section class="overview-card balance-card">
-                <p class="overview-balance-label">Current Balance</p>
-                <p class="overview-balance-value">$1,572.00</p>
-            </section>
+          <section class="overview-card balance-card">
+            <p class="overview-balance-label">Current Balance</p>
+            <p class="overview-balance-value">$1,572.00</p>
+          </section>
 
-            <section class="overview-grid">
-                <div class="overview-card budget-card">
-                    <h2 class="overview-card-title">Budget Status</h2>
+          <section class="overview-grid">
+            <div class="overview-card budget-card">
+              <h2 class="overview-card-title">Budget Status</h2>
 
-                    <div class="overview-progress-bar">
-                        <div class="overview-progress-spent"></div>
-                        <div class="overview-progress-remaining"></div>
-                    </div>
+              <div class="overview-progress-bar">
+                <div class="overview-progress-spent"></div>
+                <div class="overview-progress-remaining"></div>
+              </div>
 
-                    <div class="overview-progress-labels">
-                        <span>$550 spent</span>
-                        <span>$1,800 total</span>
-                    </div>
+              <div class="overview-progress-labels">
+                <span>$550 spent</span>
+                <span>$1,800 total</span>
+              </div>
 
-                    <p class="overview-supporting-text">
-                        You have <strong>$1,250 remaining</strong> this month.
-                    </p>
-                </div>
+              <p class="overview-supporting-text">You have <strong>$1,250 remaining</strong> this month.</p>
+            </div>
 
-                <div class="overview-card payments-card">
-                    <h2 class="overview-card-title">Upcoming Payments</h2>
+            <div class="overview-card payments-card">
+              <h2 class="overview-card-title">Upcoming Payments</h2>
 
-                    <div class="overview-payment-item">
-                        <span class="overview-payment-name">Rent</span>
-                        <span class="overview-payment-date">Apr 10</span>
-                    </div>
+              <div class="overview-payment-item">
+                <span class="overview-payment-name">Rent</span>
+                <span class="overview-payment-date">Apr 10</span>
+              </div>
 
-                    <div class="overview-payment-item">
-                        <span class="overview-payment-name">Internet</span>
-                        <span class="overview-payment-date">Apr 14</span>
-                    </div>
+              <div class="overview-payment-item">
+                <span class="overview-payment-name">Internet</span>
+                <span class="overview-payment-date">Apr 14</span>
+              </div>
 
-                    <div class="overview-payment-item">
-                        <span class="overview-payment-name">Gym</span>
-                        <span class="overview-payment-date">Apr 18</span>
-                    </div>
-                </div>
-            </section>
+              <div class="overview-payment-item">
+                <span class="overview-payment-name">Gym</span>
+                <span class="overview-payment-date">Apr 18</span>
+              </div>
+            </div>
+          </section>
 
-            <section class="overview-card highlight-card">
-                <h2 class="overview-card-title">Stats</h2>
-                <p class="overview-highlight-text">
-                    Netflix is your highest priced subscription
-                </p>
-                <p class="overview-highlight-subtext">
-                    Review subscriptions if you want to lower recurring expenses.
-                </p>
-            </section>
+          <section class="overview-card highlight-card">
+            <h2 class="overview-card-title">Stats</h2>
+            <p class="overview-highlight-text">Netflix is your highest priced subscription</p>
+            <p class="overview-highlight-subtext">Review subscriptions if you want to lower recurring expenses.</p>
+          </section>
 
-            <button class="btn" onclick="showPage('add-section')">
-                View Transactions
-            </button>
+          <button class="btn" onclick="showPage('add-section')">View Transactions</button>
         </main>
-    </section>
-
+      </section>
 
       <!-- add tab -->
       <section id="add-section" class="app-page" style="display: none">
@@ -86,8 +77,8 @@
             <!-- Type -->
             <label>Type:</label>
             <div class="toggle">
-              <button type="button" class="type-btn active">Income</button>
-              <button type="button" class="type-btn">Expense</button>
+              <button style="font-weight: bold" type="button" class="type-btn active">Income</button>
+              <button style="font-weight: bold" type="button" class="type-btn">Expense</button>
             </div>
 
             <!-- Amount -->
@@ -112,7 +103,7 @@
             <input type="date" id="date" />
 
             <!-- Save -->
-            <button class="save-btn" id="saveBtn">Save</button>
+            <button style="font-weight: bold" class="save-btn" id="saveBtn">Save</button>
 
             <!-- Transactions -->
             <section class="transaction-history">
