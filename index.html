@@ -10,58 +10,70 @@
 </head>
 <body>
     <div id="device-container">
+        <!-- overview page -->
+        <section id="overview-section" class="app-page" style="display:none;">
+            <header>
+                <h1>Overview</h1>
+            </header>
 
-        <!-- home tab -->
-        <section id="home-section" class="app-page" style="display:none;">
-            <header><h1>Home</h1></header>
-            <main class="home-main">
-                <section class="home-card balance-card">
-                    <p class="home-balance-label">Current Balance</p>
-                    <p class="home-balance-value">$1,572.00</p>
+            <main class="overview-main">
+                <section class="overview-card balance-card">
+                    <p class="overview-balance-label">Current Balance</p>
+                    <p class="overview-balance-value">$1,572.00</p>
                 </section>
 
-                <h2 class="home-section-title">This Month's Summary</h2>
+                <section class="overview-grid">
+                    <div class="overview-card budget-card">
+                        <h2 class="overview-card-title">Budget Status</h2>
 
-                <section class="home-card summary-card">
-                    <h3 class="home-month-title">March</h3>
-
-                    <div class="summary-grid">
-                        <div class="summary-item">
-                            <p class="summary-label">Income</p>
-                            <div class="summary-box">
-                                <p class="summary-value income">$1,800</p>
-                            </div>
+                        <div class="overview-progress-bar">
+                            <div class="overview-progress-spent"></div>
+                            <div class="overview-progress-remaining"></div>
                         </div>
 
-                        <div class="summary-item">
-                            <p class="summary-label">Expenses</p>
-                            <div class="summary-box">
-                                <p class="summary-value expenses">$550</p>
-                            </div>
+                        <div class="overview-progress-labels">
+                            <span>$550 spent</span>
+                            <span>$1,800 total</span>
                         </div>
 
-                        <div class="summary-item">
-                            <p class="summary-label">Remaining</p>
-                            <div class="summary-box">
-                                <p class="summary-value remaining">$1,250</p>
-                            </div>
+                        <p class="overview-supporting-text">
+                            You have <strong>$1,250 remaining</strong> this month.
+                        </p>
+                    </div>
+
+                    <div class="overview-card payments-card">
+                        <h2 class="overview-card-title">Upcoming Payments</h2>
+
+                        <div class="overview-payment-item">
+                            <span class="overview-payment-name">Rent</span>
+                            <span class="overview-payment-date">Apr 10</span>
+                        </div>
+
+                        <div class="overview-payment-item">
+                            <span class="overview-payment-name">Internet</span>
+                            <span class="overview-payment-date">Apr 14</span>
+                        </div>
+
+                        <div class="overview-payment-item">
+                            <span class="overview-payment-name">Gym</span>
+                            <span class="overview-payment-date">Apr 18</span>
                         </div>
                     </div>
                 </section>
 
-                <section class="progress-section">
-                    <div class="progress-bar-home">
-                        <div class="progress-expense-home"></div>
-                        <div class="progress-remaining-home"></div>
-                        <div class="progress-rest-home"></div>
-                    </div>
-
-                    <div class="progress-labels-home">
-                        <span>$0</span>
-                        <span>$500</span>
-                        <span>$1,800</span>
-                    </div>
+                <section class="overview-card highlight-card">
+                    <h2 class="overview-card-title">Stats</h2>
+                    <p class="overview-highlight-text">
+                        Netflix is your highest costing subscription.
+                    </p>
+                    <p class="overview-highlight-subtext">
+                        Review subscriptions if you want to lower recurring expenses.
+                    </p>
                 </section>
+
+                <button class="btn overview-action-btn" onclick="showPage('add-section')">
+                    View Transactions
+                </button>
             </main>
         </section>
 
@@ -161,7 +173,7 @@
         </section>
 
         <nav class="tab-bar">
-            <div class="tab" onclick="showPage('home-section')">HOME</div>
+            <div class="tab" onclick="showPage('overview-section')">OVERVIEW</div>
             <div class="tab" onclick="showPage('add-section')">ADD</div>
             <div class="tab active" onclick="showPage('goals-section')">GOAL</div>
             <div class="tab" onclick="showPage('insights-section')">INSIGHTS</div>
