@@ -1,202 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Budget App - Phase 2.1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="device-container">
-        <!-- overview page -->
-        <section id="overview-section" class="app-page" style="display:none;">
-            <header>
-                <h1>Overview</h1>
-            </header>
+    <!-- overview tab -->
+    <section id="overview-section" class="app-page" style="display:none;">
+        <header>
+            <h1>Overview</h1>
+        </header>
 
-            <main class="overview-main">
-                <section class="overview-card balance-card">
-                    <p class="overview-balance-label">Current Balance</p>
-                    <p class="overview-balance-value">$1,572.00</p>
-                </section>
+        <main class="overview-main">
+            <section class="overview-card balance-card">
+                <p class="overview-balance-label">Current Balance</p>
+                <p class="overview-balance-value">$1,572.00</p>
+            </section>
 
-                <section class="overview-grid">
-                    <div class="overview-card budget-card">
-                        <h2 class="overview-card-title">Budget Status</h2>
+            <section class="overview-grid">
+                <div class="overview-card budget-card">
+                    <h2 class="overview-card-title">Budget Status</h2>
 
-                        <div class="overview-progress-bar">
-                            <div class="overview-progress-spent"></div>
-                            <div class="overview-progress-remaining"></div>
-                        </div>
-
-                        <div class="overview-progress-labels">
-                            <span>$550 spent</span>
-                            <span>$1,800 total</span>
-                        </div>
-
-                        <p class="overview-supporting-text">
-                            You have <strong>$1,250 remaining</strong> this month.
-                        </p>
+                    <div class="overview-progress-bar">
+                        <div class="overview-progress-spent"></div>
+                        <div class="overview-progress-remaining"></div>
                     </div>
 
-                    <div class="overview-card payments-card">
-                        <h2 class="overview-card-title">Upcoming Payments</h2>
-
-                        <div class="overview-payment-item">
-                            <span class="overview-payment-name">Rent</span>
-                            <span class="overview-payment-date">Apr 10</span>
-                        </div>
-
-                        <div class="overview-payment-item">
-                            <span class="overview-payment-name">Internet</span>
-                            <span class="overview-payment-date">Apr 14</span>
-                        </div>
-
-                        <div class="overview-payment-item">
-                            <span class="overview-payment-name">Gym</span>
-                            <span class="overview-payment-date">Apr 18</span>
-                        </div>
+                    <div class="overview-progress-labels">
+                        <span>$550 spent</span>
+                        <span>$1,800 total</span>
                     </div>
-                </section>
 
-                <section class="overview-card highlight-card">
-                    <h2 class="overview-card-title">Stats</h2>
-                    <p class="overview-highlight-text">
-                        Netflix is your highest costing subscription.
+                    <p class="overview-supporting-text">
+                        You have <strong>$1,250 remaining</strong> this month.
                     </p>
-                    <p class="overview-highlight-subtext">
-                        Review subscriptions if you want to lower recurring expenses.
-                    </p>
-                </section>
+                </div>
 
-                <button class="btn overview-action-btn" onclick="showPage('add-section')">
-                    View Transactions
+                <div class="overview-card payments-card">
+                    <h2 class="overview-card-title">Upcoming Payments</h2>
+
+                    <div class="overview-payment-item">
+                        <span class="overview-payment-name">Rent</span>
+                        <span class="overview-payment-date">Apr 10</span>
+                    </div>
+
+                    <div class="overview-payment-item">
+                        <span class="overview-payment-name">Internet</span>
+                        <span class="overview-payment-date">Apr 14</span>
+                    </div>
+
+                    <div class="overview-payment-item">
+                        <span class="overview-payment-name">Gym</span>
+                        <span class="overview-payment-date">Apr 18</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="overview-card highlight-card">
+                <h2 class="overview-card-title">Stats</h2>
+                <p class="overview-highlight-text">
+                    Netflix is your highest priced subscription
+                </p>
+                <p class="overview-highlight-subtext">
+                    Review subscriptions if you want to lower recurring expenses.
+                </p>
+            </section>
+
+            <button class="btn overview-outline-btn" onclick="showPage('add-section')">
+                View Transactions
+            </button>
+        </main>
+    </section>
+
+
+      <!-- add tab -->
+      <section id="add-section" class="app-page" style="display: none">
+        <header><h1>Add Transaction</h1></header>
+        <main class="add-main">
+          <div class="container add-transaction-container">
+            <!-- Type -->
+            <label>Type:</label>
+            <div class="toggle">
+              <button type="button" class="type-btn active">Income</button>
+              <button type="button" class="type-btn">Expense</button>
+            </div>
+
+            <!-- Amount -->
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" placeholder="$ Enter Amount" />
+
+            <!-- Category -->
+            <label for="category">Category:</label>
+            <select id="category">
+              <option value="">Select Category</option>
+              <option value="Food">Food</option>
+              <option value="Rent">Rent</option>
+              <option value="Salary">Salary</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <input type="text" id="otherCategory" placeholder="Enter custom category" style="display: none" />
+
+            <!-- Date -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" />
+
+            <!-- Save -->
+            <button class="save-btn" id="saveBtn">Save</button>
+
+            <!-- Transactions -->
+            <section class="transaction-history">
+              <h2>Transactions</h2>
+              <div id="transactionList"></div>
+            </section>
+          </div>
+        </main>
+      </section>
+
+      <!-- goals tab -->
+      <section id="goals-section" class="app-page">
+        <header><h1>Goals</h1></header>
+        <main>
+          <div id="new-pop" class="overlay" onclick="closePop(event)">
+            <div class="box">
+              <h3>New Goal</h3>
+              <input type="text" id="new-g-name" placeholder="Goal Name (e.g. New Car)" />
+              <input type="number" id="new-g-target" placeholder="Target Amount ($)" />
+              <input type="number" id="new-g-saved" placeholder="Current Savings ($)" />
+
+              <div class="row">
+                <button class="btn" onclick="closePop()">Cancel</button>
+                <button class="btn" style="background: var(--green); color: white" onclick="addNewGoal()">
+                  Create
                 </button>
-            </main>
-        </section>
-
-        <!-- add tab -->
-        <section id="add-section" class="app-page" style="display:none;">
-            <header><h1>Add Transaction</h1></header>
-            <main><p>Add Form Placeholder</p></main>
-        </section>
-
-        <!-- goals tab -->
-        <section id="goals-section" class="app-page">
-            <header><h1>Goals</h1></header>
-            <main>
-                <div id="new-pop" class="overlay" onclick="closePop(event)">
-                    <div class="box">
-                        <h3>New Goal</h3>
-                        <input type="text" id="new-g-name" placeholder="Goal Name (e.g. New Car)">
-                        <input type="number" id="new-g-target" placeholder="Target Amount ($)">
-                        <input type="number" id="new-g-saved" placeholder="Current Savings ($)">
-                        
-                        <div class="row">
-                            <button class="btn" onclick="closePop()">Cancel</button>
-                            <button class="btn" style="background: var(--green); color: white;" onclick="addNewGoal()">Create</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="goal-nav">
-                    <button onclick="moveGoal(-1)">&lt;</button>
-                    <h2 id="goal-name">Spring Break Fund</h2>
-                    <button onclick="moveGoal(1)">&gt;</button>
-                </div>
-                <div class="goal-card">
-                    <div class="progress-bg">
-                        <div id="progress-fill" class="progress-bar" style="width: 60%;"></div>
-                    </div>
-                    <div class="labels">
-                        <span>$0</span>
-                        <span id="goal-saved">$1,200</span>
-                        <span id="goal-total">$2,000</span>
-                    </div>
-                    <button class="btn" onclick="openPop('add-pop')">+ Add To Goal</button>
-                </div>
-                <button class="btn main-btn" onclick="openPop('new-pop')">+ Create New Goal</button>
-            </main>
-        </section>
-
-        <!-- insights tab -->
-        <section id="insights-section" class="app-page" style="display:none;">
-            <header><h1>Insights</h1></header>
-            <main class="insights-main">
-                <h2 class="insights-title">Spending by Category</h2>
-                
-                <div class="insights-container">
-                    <!-- Pie Chart and Legend Side by Side -->
-                    <div class="chart-and-legend">
-                        <svg id="pie-chart" viewBox="0 0 200 200" width="240" height="240">
-                            <!-- Pie chart will be drawn here by JavaScript -->
-                        </svg>
-                        
-                        <div class="category-legend">
-                            <div class="category-item">
-                                <label>
-                                    <input type="checkbox" class="category-checkbox" data-category="rent" checked>
-                                    <span class="color-box" style="background: #5B7FFF;"></span>
-                                    <span class="category-label">Rent 40%</span>
-                                </label>
-                            </div>
-                            <div class="category-item">
-                                <label>
-                                    <input type="checkbox" class="category-checkbox" data-category="food" checked>
-                                    <span class="color-box" style="background: #FF69B4;"></span>
-                                    <span class="category-label">Food 25%</span>
-                                </label>
-                            </div>
-                            <div class="category-item">
-                                <label>
-                                    <input type="checkbox" class="category-checkbox" data-category="shopping" checked>
-                                    <span class="color-box" style="background: #FFA500;"></span>
-                                    <span class="category-label">Shopping 20%</span>
-                                </label>
-                            </div>
-                            <div class="category-item">
-                                <label>
-                                    <input type="checkbox" class="category-checkbox" data-category="transport" checked>
-                                    <span class="color-box" style="background: #20C997;"></span>
-                                    <span class="category-label">Transport 15%</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spending-summary">
-                    <p>You spent 40% of your budget on Rent this month.</p>
-                </div>
-            </main>
-        </section>
-
-        <nav class="tab-bar">
-            <div class="tab" onclick="showPage('overview-section')">OVERVIEW</div>
-            <div class="tab" onclick="showPage('add-section')">ADD</div>
-            <div class="tab active" onclick="showPage('goals-section')">GOAL</div>
-            <div class="tab" onclick="showPage('insights-section')">INSIGHTS</div>
-        </nav>
-
-        <div id="add-pop" class="overlay" onclick="closePop(event)">
-            <div class="popup">
-                <h3>Add to Goal</h3>
-                <input type="number" placeholder="Enter Amount ($)">
-                <button onclick="closePop()">Cancel</button>
-                <button onclick="closePop()">Add</button>
+              </div>
             </div>
-        </div>
-
-        <div id="new-pop" class="overlay" onclick="closePop(event)">
-            <div class="popup">
-                <h3>New Goal</h3>
-                <input type="text" placeholder="Goal Name">
-                <input type="number" placeholder="Target ($)">
-                <button onclick="closePop()">Create</button>
+          </div>
+          <div class="goal-nav">
+            <button onclick="moveGoal(-1)">&lt;</button>
+            <h2 id="goal-name">Spring Break Fund</h2>
+            <button onclick="moveGoal(1)">&gt;</button>
+          </div>
+          <div class="goal-card">
+            <div class="progress-bg">
+              <div id="progress-fill" class="progress-bar" style="width: 60%"></div>
             </div>
+            <div class="labels">
+              <span>$0</span>
+              <span id="goal-saved">$1,200</span>
+              <span id="goal-total">$2,000</span>
+            </div>
+            <button class="btn" onclick="openPop('add-pop')">+ Add To Goal</button>
+          </div>
+          <button class="btn main-btn" onclick="openPop('new-pop')">+ Create New Goal</button>
+        </main>
+      </section>
+
+      <!-- insights tab -->
+      <section id="insights-section" class="app-page" style="display: none">
+        <header><h1>Insights</h1></header>
+        <main class="insights-main">
+          <h2 class="insights-title">Spending by Category</h2>
+
+          <!-- Date Range Filter -->
+          <div class="date-filter">
+            <label>
+              <span>From:</span>
+              <input type="date" id="start-date" value="2026-03-01" />
+            </label>
+            <label>
+              <span>To:</span>
+              <input type="date" id="end-date" value="2026-03-31" />
+            </label>
+            <button class="btn filter-btn" onclick="applyDateFilter()">Apply</button>
+            <button class="btn" onclick="toggleComparison()">Compare Periods</button>
+          </div>
+
+          <div id="single-chart-view">
+            <div class="insights-container">
+              <!-- Pie Chart and Legend Side by Side -->
+              <div class="chart-and-legend">
+                <svg id="pie-chart" viewBox="0 0 200 200" width="240" height="240">
+                  <!-- Pie chart will be drawn here by JavaScript -->
+                </svg>
+
+                <div class="category-legend">
+                  <div class="category-item">
+                    <label>
+                      <input type="checkbox" class="category-checkbox" data-category="rent" checked />
+                      <span class="color-box" style="background: #5b7fff"></span>
+                      <span class="category-label">Rent 40%</span>
+                    </label>
+                  </div>
+                  <div class="category-item">
+                    <label>
+                      <input type="checkbox" class="category-checkbox" data-category="food" checked />
+                      <span class="color-box" style="background: #ff69b4"></span>
+                      <span class="category-label">Food 25%</span>
+                    </label>
+                  </div>
+                  <div class="category-item">
+                    <label>
+                      <input type="checkbox" class="category-checkbox" data-category="shopping" checked />
+                      <span class="color-box" style="background: #ffa500"></span>
+                      <span class="category-label">Shopping 20%</span>
+                    </label>
+                  </div>
+                  <div class="category-item">
+                    <label>
+                      <input type="checkbox" class="category-checkbox" data-category="transport" checked />
+                      <span class="color-box" style="background: #20c997"></span>
+                      <span class="category-label">Transport 15%</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spending-summary">
+              <p>You spent 40% of your budget on Rent this month.</p>
+            </div>
+          </div>
+
+          <!-- Comparison View (hidden by default) -->
+          <div id="comparison-view" style="display: none">
+            <div class="comparison-container">
+              <div class="comparison-period">
+                <h3>Period 1</h3>
+                <label>
+                  <span>From:</span>
+                  <input type="date" id="compare-start-1" value="2026-02-01" />
+                </label>
+                <label>
+                  <span>To:</span>
+                  <input type="date" id="compare-end-1" value="2026-02-28" />
+                </label>
+                <svg id="pie-chart-compare-1" viewBox="0 0 200 200" width="200" height="200"></svg>
+              </div>
+              <div class="comparison-period">
+                <h3>Period 2</h3>
+                <label>
+                  <span>From:</span>
+                  <input type="date" id="compare-start-2" value="2026-03-01" />
+                </label>
+                <label>
+                  <span>To:</span>
+                  <input type="date" id="compare-end-2" value="2026-03-31" />
+                </label>
+                <svg id="pie-chart-compare-2" viewBox="0 0 200 200" width="200" height="200"></svg>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <!-- Transaction Details Modal -->
+      <div id="transaction-details-modal" class="overlay" onclick="closeTransactionModal(event)">
+        <div class="modal-content">
+          <h3 id="modal-category-title">Rent Transactions</h3>
+          <div id="transaction-list">
+            <!-- Transactions will be populated here -->
+          </div>
+          <button class="btn" onclick="closeTransactionModal()">Close</button>
         </div>
+      </div>
+
+      <nav class="tab-bar">
+        <div class="tab" onclick="showPage('overview-section')">OVERVIEW</div>
+        <div class="tab" onclick="showPage('add-section')">ADD</div>
+        <div class="tab active" onclick="showPage('goals-section')">GOAL</div>
+        <div class="tab" onclick="showPage('insights-section')">INSIGHTS</div>
+      </nav>
+
+      <div id="add-pop" class="overlay" onclick="closePop(event)">
+        <div class="popup">
+          <h3>Add to Goal</h3>
+          <input type="number" placeholder="Enter Amount ($)" />
+          <button onclick="closePop()">Cancel</button>
+          <button onclick="closePop()">Add</button>
+        </div>
+      </div>
+
+      <div id="new-pop" class="overlay" onclick="closePop(event)">
+        <div class="popup">
+          <h3>New Goal</h3>
+          <input type="text" placeholder="Goal Name" />
+          <input type="number" placeholder="Target ($)" />
+          <button onclick="closePop()">Create</button>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
