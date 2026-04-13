@@ -272,9 +272,11 @@
       <div id="add-pop" class="overlay" onclick="closePop(event)">
         <div class="popup">
           <h3>Add to Goal</h3>
-          <input type="number" placeholder="Enter Amount ($)" />
-          <button onclick="closePop()">Cancel</button>
-          <button onclick="closePop()">Add</button>
+          <input type="number" id="goal-add-amount" placeholder="Enter Amount ($)" />
+          <div class="row">
+            <button class="btn" onclick="closePop()">Cancel</button>
+            <button class="btn" style="background: var(--green); color: white" onclick="addAmountToGoal()">Add</button>
+          </div>
         </div>
       </div>
 

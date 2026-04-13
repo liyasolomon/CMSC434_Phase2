@@ -267,10 +267,42 @@ function addNewGoal() {
 /* HELPER: Separate UI updates to keep code clean */
 function updateGoalUI() {
   const g = goalsList[goalIdx];
+  
+  // Update text elements
   document.getElementById("goal-name").innerText = g.name;
   document.getElementById("goal-saved").innerText = `$${g.saved.toLocaleString()}`;
   document.getElementById("goal-total").innerText = `$${g.total.toLocaleString()}`;
-  document.getElementById("progress-fill").style.width = g.pct + "%";
+  
+  // Update progress bar width
+  const progressFill = document.getElementById("progress-fill");
+  progressFill.style.width = g.pct + "%";
+  
+  // Optional: Update progress percentage text if you have a label for it
+  const pctLabel = document.getElementById("goal-pct-label");
+  if (pctLabel) {
+    pctLabel.innerText = `${g.pct}%`;
+  }
+}
+
+/* --- DEEP VERTICAL TASK: ADDING AMOUNT TO EXISTING GOAL --- */
+function addAmountToGoal() {
+
+  const input = document.getElementById("goal-add-amount");
+  const amount = parseFloat(input.value);
+
+  if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid amount to add.");
+    return;
+  }
+
+  const currentGoal = goalsList[goalIdx];
+  currentGoal.saved += amount;
+  currentGoal.pct = Math.min(Math.round((currentGoal.saved / currentGoal.total) * 100), 100);
+
+
+  updateGoalUI();
+  input.value = "";
+  closePop();
 }
 
 /* --- popups for adding to and creating goals --- */
